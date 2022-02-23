@@ -1,0 +1,139 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "final_space": true,
+  "console_title": true,
+  "console_title_style": "template",
+  "console_title_template": "{{if .Root}}root :: {{end}}{{.Shell}} :: {{.Folder}}",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "text",
+          "style": "diamond",
+          "leading_diamond": "\ue0c7\u2593",
+          "foreground": "#000000",
+          "background": "#f5a631",
+          "properties": {
+            "text": "",
+            "postfix": "",
+            "prefix": ""
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "os",
+          "style": "diamond",
+          "leading_diamond": "\ue0c7\u2593",
+          "foreground": "#26C6DA",
+          "background": "#202733",
+          "properties": {
+            "alpine": "\uf300",
+            "arch": "\uf303",
+            "centos": "\uf304",
+            "debian": "\uf306",
+            "elementary": "\uf309",
+            "fedora": "\uf30a",
+            "gentoo": "\uf30d",
+            "linux": "\ue712",
+            "macos": "\ue711",
+            "manjaro": "\uf312",
+            "mint": "\uf30f",
+            "opensuse": "\uf314",
+            "raspbian": "\uf315",
+            "ubuntu": "\uf31c",
+            "wsl": "\ue712",
+            "wsl_separator": " on ",
+            "windows": "\ue70f",
+            "postfix": "<#f5a631> \ue0b1</>"
+          }
+        },
+        {
+          "type": "session",
+          "style": "diamond",
+          "foreground": "#f5a631",
+          "background": "#202733",
+          "properties": {
+            "display_host": false,
+            "user_info_separator": "<#f5a631 >\uf1fa</>",
+            "display_default": false,
+            "user_color": "#fafafa",
+            "host_color": "#fafafa",
+            "postfix": "<#f5a631> \ue0b1</>"
+          }
+        },
+        {
+          "type": "root",
+          "style": "diamond",
+          "foreground": "#f5a631",
+          "background": "#202733",
+          "properties": {
+            "root_icon": "\uF0E7",
+            "postfix": "<#ffea00> \ue0b1</>"
+          }
+        },
+        {
+          "type": "path",
+          "style": "diamond",
+          "foreground": "#fafafa",
+          "background": "#202733",
+          "properties": {
+            "prefix": "<#f5a631> \ue5ff </>",
+            "style": "agnoster",
+            "enable_hyperlink": true,
+            "home_icon": "\uF7DB ",
+            "folder_icon": "<#fafafa>\ue5fe </>",
+            "folder_separator_icon": "<#f5a631>\uE0B1 </>"
+          }
+        },
+        {
+          "type": "git",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#202733",
+          "background": "#f5a631",
+          "foreground_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#ffea00{{ end }}",
+            "{{ if gt .Ahead 0 }}#2EC4B6{{ end }}",
+            "{{ if gt .Behind 0 }}#8A4FFF{{ end }}"
+          ],
+          "properties": {
+            "fetch_status": true,
+            "fetch_stash_count": true,
+            "fetch_upstream_icon": true,
+            "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }} \uF044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uF046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uF692 {{ .StashCount }}{{ end }}"
+          }
+        },
+        {
+          "type": "dotnet",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#ffffff",
+          "background": "#502CE0",
+          "properties": {
+            "prefix": " \uE77F "
+          }
+        },
+        {
+          "type": "text",
+          "style": "diamond",
+          "trailing_diamond": "\ue0b0",
+          "foreground": "#fafafa",
+          "background": "#2f2f2f",
+          "properties": {
+            "text": "",
+            "postfix": "",
+            "prefix": ""
+          }
+        }
+      ]
+    }
+  ]
+}
